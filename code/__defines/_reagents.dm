@@ -147,7 +147,8 @@
 #define REAGENT_ID_PAROXETINE "paroxetine"
 #define REAGENT_QERRQUEM "Qerr-quem"
 #define REAGENT_ID_QERRQUEM "qerr_quem"
-
+#define REAGENT_HAYWIRE "Haywire"
+#define REAGENT_ID_HAYWIRE "haywire"
 
 // Modifiers
 #define REAGENT_BERSERKMED "brute juice"

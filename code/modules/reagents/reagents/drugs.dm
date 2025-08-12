@@ -181,6 +181,60 @@
 			M.emote(pick("twitch", "giggle"))
 			prob_proc = FALSE
 
+/datum/reagent/drugs/haywire
+	name = REAGENT_HAYWIRE
+	id = REAGENT_ID_HAYWIRE
+	description = "A chemical synthesized from a species of strange, biomechanical tubers.. said to induce hallucinogenic properties in synthetic lifeforms."
+	taste_description = "rust"
+	color = "#E700E7"
+	high_message_list = list("Your systems feel as if they're on the fritz!",
+	"You hear a constant.. tingly buzz in your audiotory receptors..",
+	"Your databanks feel.. sparkly...",
+	"You daydream of simply.. sitting on a countertop and toasting bread..")
+	sober_message_list = list("The buzzing stops..", "Your subroutines feel a sense of deep longing..")
+	supply_conversion_value = REFINERYEXPORT_VALUE_HIGHREFINED // bonus
+	industrial_use = REFINERYEXPORT_REASON_ILLDRUG
+
+/datum/reagent/drugs/haywire/on_mob_life(var/mob/living/M as mob)
+	..()
+
+	var/threshold = 1
+	if(M.species.chem_strength_tox > 0) //Closer to 0 means they're more resistant to toxins. Higher than 1 means they're weaker to toxins.
+		threshold /= M.species.chem_strength_tox
+
+	if(alien == IS_SLIME)
+		threshold *= 0.15 //~1/6
+
+	M.druggy = max(M.druggy, 30)
+
+	var/drug_strength = 20
+	var/effective_dose = dose
+	if(issmall(M)) effective_dose *= 2
+	if(effective_dose < 1 * threshold)
+		M.apply_effect(3, STUTTER)
+		M.make_dizzy(5)
+		if(prob(3) && prob_proc == TRUE)
+			M.emote(pick("twitch", "giggle"))
+			prob_proc = FALSE
+	else if(effective_dose < 2 * threshold)
+		M.apply_effect(3, STUTTER)
+		M.make_jittery(5)
+		M.make_dizzy(5)
+		M.druggy = max(M.druggy, 35)
+		M.hallucination = max(M.hallucination, drug_strength * threshold)
+		if(prob(5) && prob_proc == TRUE)
+			M.emote(pick("twitch", "giggle"))
+			prob_proc = FALSE
+	else
+		M.apply_effect(3, STUTTER)
+		M.make_jittery(10)
+		M.make_dizzy(10)
+		M.druggy = max(M.druggy, 40)
+		M.hallucination = max(M.hallucination, drug_strength * threshold)
+		if(prob(10) && prob_proc == TRUE)
+			M.emote(pick("twitch", "giggle"))
+			prob_proc = FALSE
+
 /datum/reagent/drugs/talum_quem
 	name = REAGENT_TALUMQUEM
 	id = REAGENT_ID_TALUMQUEM
