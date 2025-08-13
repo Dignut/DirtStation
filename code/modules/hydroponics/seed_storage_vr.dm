@@ -106,4 +106,5 @@
 		/obj/item/seeds/whitebeetseed = 3,
 		/obj/item/seeds/wurmwoad = 3,
 		/obj/item/seeds/shrinkshroom = 3,
-		/obj/item/seeds/megashroom = 3)
+		/obj/item/seeds/megashroom = 3,
+		/obj/item/seeds/zaproot = 2)

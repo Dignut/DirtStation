@@ -48,7 +48,8 @@
 				/obj/item/seeds/ambrosiavulgarisseed = 3,
 				/obj/item/seeds/greengrapeseed = 3,
 				/obj/item/seeds/icepepperseed = 2,
-				/obj/item/seeds/kudzuseed = 1
+				/obj/item/seeds/kudzuseed = 1,
+				/obj/item/seeds/zaproot = 1
 			),
 			prob(30);list( ///Mushroom batch
 				/obj/item/seeds/ambrosiavulgarisseed = 1,
@@ -201,7 +202,8 @@
 		/obj/item/seeds/watermelonseed = 3,
 		/obj/item/seeds/wheatseed = 3,
 		/obj/item/seeds/whitebeetseed = 3,
-		/obj/item/seeds/wurmwoad = 3
+		/obj/item/seeds/wurmwoad = 3,
+		/obj/item/seeds/zaproot = 2
 		)
 
 /obj/machinery/seed_storage/attack_hand(mob/user as mob)

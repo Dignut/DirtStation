@@ -394,3 +394,8 @@
 	name = "wurmwoad spawner"
 	seedtype = PLANT_WURMWOAD
 	icon_state = "eyepod"
+
+/obj/fruitspawner/zaproot
+	name = "zaproot spawner"
+	seedtype = PLANT_ZAPROOT
+	icon_state = "potato"
