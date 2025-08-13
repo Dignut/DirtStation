@@ -75,6 +75,24 @@
 	set_trait(TRAIT_PLANT_COLOUR,"#F58A18")
 	set_trait(TRAIT_PLANT_ICON,"mushroom6")
 
+datum/seed/mushroom/hallucinogenicsynthetic
+	name = PLANT_ZAPROOT
+	seed_name = PLANT_ZAPROOT
+	display_name = PLANT_ZAPROOT
+	mutants = list(PLANT_LIBERTYCAP,PLANT_GLOWSHROOM)
+	chems = list(REAGENT_ID_NUTRIMENT = list(1,50), REAGENT_ID_HAYWIRE = list(3,5), REAGENT_ID_FUNGI = list(1,5))
+
+/datum/seed/mushroom/hallucinogenicsynthetic/New()
+	..()
+	set_trait(TRAIT_MATURATION,10)
+	set_trait(TRAIT_PRODUCTION,5)
+	set_trait(TRAIT_YIELD,4)
+	set_trait(TRAIT_POTENCY,15)
+	set_trait(TRAIT_PRODUCT_ICON,"potato")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#FFB70F")
+	set_trait(TRAIT_PLANT_COLOUR,"#F58A18")
+	set_trait(TRAIT_PLANT_ICON,"potato")
+
 /datum/seed/mushroom/hallucinogenic/strong
 	name = PLANT_LIBERTYCAP
 	seed_name = "liberty cap"
